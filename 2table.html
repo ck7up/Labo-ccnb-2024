@@ -1,0 +1,2399 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersécurité</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="https://www.linkedin.com/in/christian-kalla/">
+            <img src="https://tse3.mm.bing.net/th/id/OIG2.DV69YYvm9eAOdIcLM8VL?pid=ImgGn" alt="CYBERTIC LOGO"
+                width="200" height="150">
+        </a>
+        <h1>Laboratoire 5 - Web Scraping with Pandas</h1>
+        <h4>By Christian Kalla - Hiver 2024, CCNB</h4>
+    </header>
+    <main>
+        <div class="margination">
+            <section class="align" id="introduction">
+                <h2>Protégez votre monde numérique</h2>
+                <p>Dans un monde de plus en plus connecté, la cybersécurité est essentielle pour protéger vos appareils,
+                    vos
+                    données et votre vie privée.</p>
+                <p>Apple s'engage à fournir des produits et services sécurisés dès leur conception. Nous offrons
+                    également
+                    des outils et des ressources pour vous aider à protéger votre vie numérique.</p>
+            </section>
+            <section class="align" id="menaces">
+                <h2>Menaces courantes</h2>
+                <p>Voici quelques exemples de menaces courantes en matière de cybersécurité:</p>
+                <ul>
+                    <li>Malware (logiciels malveillants)</li>
+                    <li>Phishing</li>
+                    <li>Attaques par injection SQL</li>
+                    <li>DDoS (déni de service distribué)</li>
+                    <li>Attaques par ransomware</li>
+                </ul>
+            </section>
+            <section class="align" id="meilleurs-pratiques">
+                <h2>Conseils pour une meilleure cybersécurité</h2>
+                <p>Voici quelques conseils pour améliorer votre cybersécurité:</p>
+                <ul>
+                    <li>Utilisez des mots de passe forts et uniques.</li>
+                    <li>Activez l'authentification à deux facteurs.</li>
+                    <li>Mettez à jour régulièrement vos logiciels et systèmes d'exploitation.</li>
+                    <li>Soyez prudent lorsque vous cliquez sur des liens ou ouvrez des pièces jointes.</li>
+                    <li>Sauvegardez régulièrement vos données.</li>
+                    <li>Restez informé des dernières menaces et vulnérabilités.</li>
+                </ul>
+            </section>
+        </div>
+        <div class="paddingnation">
+            <section id="tableau">
+                <h2 class="t1">Cyberattaques en 2024 - Table 2</h2>
+
+                <table class="table1">
+                    <tr>
+                        <td>AttackID</td>
+                        <td>AttackType</td>
+                        <td>AttackDate</td>
+                        <td>TargetSystem</td>
+                        <td>AttackVector</td>
+                        <td>Severity</td>
+                        <td>AttackerIP</td>
+                        <td>VictimIP</td>
+                        <td>Status</td>
+                        <td>AttackDuration</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Malware</td>
+                        <td>2022-02-15</td>
+                        <td>CorporateServer</td>
+                        <td>Email Vortex</td>
+                        <td>High</td>
+                        <td>192.168.1.100</td>
+                        <td>10.0.0.1</td>
+                        <td>Resolved</td>
+                        <td>345</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Phishing</td>
+                        <td>2022-02-20</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.2</td>
+                        <td>In Progress</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.3</td>
+                        <td>Open</td>
+                        <td>434</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Ransomware</td>
+                        <td>2022-03-05</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.4</td>
+                        <td>Resolved</td>
+                        <td>84</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td></td>
+                        <td>2022-03-10</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.5</td>
+                        <td>Open</td>
+                        <td>645</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Phishing</td>
+                        <td>2022-03-12</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.6</td>
+                        <td>Open</td>
+                        <td>93</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Malware</td>
+                        <td>2022-03-15</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.101</td>
+                        <td>10.0.0.7</td>
+                        <td>Resolved</td>
+                        <td>39</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td></td>
+                        <td>2022-03-20</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.8</td>
+                        <td>In Progress</td>
+                        <td>456</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Ransomware</td>
+                        <td>2022-03-25</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.9</td>
+                        <td>Open</td>
+                        <td>532</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>SQL Injection</td>
+                        <td>2022-03-28</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.10</td>
+                        <td>Resolved</td>
+                        <td>62</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Malware</td>
+                        <td>2022-04-02</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.102</td>
+                        <td>10.0.0.11</td>
+                        <td>Open</td>
+                        <td>47</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Phishing</td>
+                        <td>2022-04-05</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td></td>
+                        <td>Resolved</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-04-10</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td></td>
+                        <td></td>
+                        <td>10.0.0.13</td>
+                        <td>Open</td>
+                        <td>54</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td></td>
+                        <td>2022-04-15</td>
+                        <td>DatabaseServer</td>
+                        <td></td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.14</td>
+                        <td>In Progress</td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>SQL Injection</td>
+                        <td></td>
+                        <td></td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.15</td>
+                        <td>Resolved</td>
+                        <td>235</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Phishing</td>
+                        <td>2022-04-20</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.16</td>
+                        <td>Open</td>
+                        <td>244</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Malware</td>
+                        <td>2022-04-25</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.103</td>
+                        <td>10.0.0.17</td>
+                        <td>Resolved</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-04-28</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.18</td>
+                        <td>In Progress</td>
+                        <td>44</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Ransomware</td>
+                        <td>2022-05-02</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td></td>
+                        <td>Resolved</td>
+                        <td>723</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>SQL Injection</td>
+                        <td>2022-05-05</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.20</td>
+                        <td>Open</td>
+                        <td>94</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Malware</td>
+                        <td>2022-05-10</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.104</td>
+                        <td>10.0.0.21</td>
+                        <td>Resolved</td>
+                        <td>44</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>Phishing</td>
+                        <td>2022-05-15</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.22</td>
+                        <td>Open</td>
+                        <td>323</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-05-18</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.23</td>
+                        <td>Resolved</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>Ransomware</td>
+                        <td>2022-05-22</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.24</td>
+                        <td>In Progress</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>SQL Injection</td>
+                        <td>2022-05-25</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.25</td>
+                        <td>Resolved</td>
+                        <td>102</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>Phishing</td>
+                        <td>2022-05-28</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.26</td>
+                        <td>Open</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>Malware</td>
+                        <td>2022-06-02</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.105</td>
+                        <td>10.0.0.27</td>
+                        <td>Resolved</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-06-05</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.28</td>
+                        <td>In Progress</td>
+                        <td>34</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>Ransomware</td>
+                        <td>2022-06-10</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td></td>
+                        <td>Open</td>
+                        <td>343</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>SQL Injection</td>
+                        <td>2022-06-15</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.30</td>
+                        <td>Resolved</td>
+                        <td>44</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td>Malware</td>
+                        <td></td>
+                        <td></td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.106</td>
+                        <td>10.0.0.31</td>
+                        <td>Open</td>
+                        <td>83</td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td></td>
+                        <td>2022-06-22</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td></td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.32</td>
+                        <td>Resolved</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-06-25</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.33</td>
+                        <td>Open</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td>Ransomware</td>
+                        <td>2022-06-28</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td></td>
+                        <td>10.0.0.34</td>
+                        <td>Resolved</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>35</td>
+                        <td>SQL Injection</td>
+                        <td>2022-07-02</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Resolved</td>
+                        <td>111</td>
+                    </tr>
+                    <tr>
+                        <td>36</td>
+                        <td>Malware</td>
+                        <td></td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.107</td>
+                        <td>10.0.0.35</td>
+                        <td>In Progress</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td>Phishing</td>
+                        <td>2022-07-10</td>
+                        <td>EmployeeWorkstation</td>
+                        <td></td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td></td>
+                        <td>Resolved</td>
+                        <td>88</td>
+                    </tr>
+                    <tr>
+                        <td>38</td>
+                        <td></td>
+                        <td>2022-07-15</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.37</td>
+                        <td>Open</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>39</td>
+                        <td>Ransomware</td>
+                        <td>2022-07-18</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.38</td>
+                        <td>Resolved</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>40</td>
+                        <td>SQL Injection</td>
+                        <td>2022-07-22</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.39</td>
+                        <td>In Progress</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>41</td>
+                        <td>Phishing</td>
+                        <td>2022-07-25</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.40</td>
+                        <td>Resolved</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>42</td>
+                        <td>Malware</td>
+                        <td>2022-07-28</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.108</td>
+                        <td>10.0.0.41</td>
+                        <td>Resolved</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>43</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-08-02</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.42</td>
+                        <td>Open</td>
+                        <td>97</td>
+                    </tr>
+                    <tr>
+                        <td>44</td>
+                        <td>Ransomware</td>
+                        <td>2022-08-05</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.43</td>
+                        <td>Resolved</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>45</td>
+                        <td>SQL Injection</td>
+                        <td>2022-08-10</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.44</td>
+                        <td>Open</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>46</td>
+                        <td>Malware</td>
+                        <td>2022-08-15</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.109</td>
+                        <td>10.0.0.45</td>
+                        <td>Resolved</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>47</td>
+                        <td>Phishing</td>
+                        <td>2022-08-18</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.46</td>
+                        <td>Resolved</td>
+                        <td>97</td>
+                    </tr>
+                    <tr>
+                        <td>48</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-08-22</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.47</td>
+                        <td>Open</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>49</td>
+                        <td>Ransomware</td>
+                        <td>2022-08-25</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.48</td>
+                        <td>Resolved</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td>SQL Injection</td>
+                        <td>2022-08-28</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.49</td>
+                        <td>Resolved</td>
+                        <td>97</td>
+                    </tr>
+                    <tr>
+                        <td>51</td>
+                        <td>Phishing</td>
+                        <td>2022-09-02</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.50</td>
+                        <td>Open</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>52</td>
+                        <td>Malware</td>
+                        <td>2022-09-05</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.110</td>
+                        <td></td>
+                        <td>Resolved</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>53</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-09-10</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.52</td>
+                        <td>In Progress</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>54</td>
+                        <td>Ransomware</td>
+                        <td>2022-09-15</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.53</td>
+                        <td>Resolved</td>
+                        <td>532</td>
+                    </tr>
+                    <tr>
+                        <td>55</td>
+                        <td>SQL Injection</td>
+                        <td>2022-09-18</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.54</td>
+                        <td>Resolved</td>
+                        <td>94</td>
+                    </tr>
+                    <tr>
+                        <td>56</td>
+                        <td>Phishing</td>
+                        <td></td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.55</td>
+                        <td>Open</td>
+                        <td>97</td>
+                    </tr>
+                    <tr>
+                        <td>57</td>
+                        <td>Malware</td>
+                        <td>2022-09-25</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.111</td>
+                        <td>10.0.0.56</td>
+                        <td>Resolved</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>58</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-09-28</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.57</td>
+                        <td>In Progress</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>59</td>
+                        <td>Ransomware</td>
+                        <td>2022-10-02</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.58</td>
+                        <td>Resolved</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>60</td>
+                        <td>SQL Injection</td>
+                        <td>2022-10-05</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.59</td>
+                        <td>Resolved</td>
+                        <td>332</td>
+                    </tr>
+                    <tr>
+                        <td>61</td>
+                        <td></td>
+                        <td></td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.60</td>
+                        <td>Open</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>62</td>
+                        <td>Malware</td>
+                        <td>2022-10-15</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td></td>
+                        <td>10.0.0.61</td>
+                        <td>Resolved</td>
+                        <td>4324</td>
+                    </tr>
+                    <tr>
+                        <td>63</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-10-18</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.62</td>
+                        <td>Open</td>
+                        <td>43</td>
+                    </tr>
+                    <tr>
+                        <td>64</td>
+                        <td>Ransomware</td>
+                        <td>2022-10-22</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.63</td>
+                        <td>Resolved</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>65</td>
+                        <td>SQL Injection</td>
+                        <td>2022-10-25</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.64</td>
+                        <td>In Progress</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>66</td>
+                        <td>Phishing</td>
+                        <td>2022-10-28</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.65</td>
+                        <td>Resolved</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>67</td>
+                        <td>Malware</td>
+                        <td>2022-11-02</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.113</td>
+                        <td>10.0.0.66</td>
+                        <td>Resolved</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>68</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-11-05</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.67</td>
+                        <td>Open</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>69</td>
+                        <td>Ransomware</td>
+                        <td>2022-11-10</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.68</td>
+                        <td>Resolved</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>70</td>
+                        <td>SQL Injection</td>
+                        <td>2022-11-15</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.69</td>
+                        <td>Resolved</td>
+                        <td>445</td>
+                    </tr>
+                    <tr>
+                        <td>71</td>
+                        <td>Phishing</td>
+                        <td>2022-11-18</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.70</td>
+                        <td>Open</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>72</td>
+                        <td>Malware</td>
+                        <td>2022-11-22</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.114</td>
+                        <td>10.0.0.71</td>
+                        <td>Resolved</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>73</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-11-25</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td></td>
+                        <td>Not Available</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>74</td>
+                        <td>Phishing</td>
+                        <td></td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.72</td>
+                        <td>Resolved</td>
+                        <td>764</td>
+                    </tr>
+                    <tr>
+                        <td>75</td>
+                        <td>Malware</td>
+                        <td>2022-12-02</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.115</td>
+                        <td>10.0.0.73</td>
+                        <td>Open</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>76</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-12-05</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.74</td>
+                        <td>Resolved</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>77</td>
+                        <td>Ransomware</td>
+                        <td>2022-12-10</td>
+                        <td></td>
+                        <td></td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.75</td>
+                        <td>In Progress</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>78</td>
+                        <td>SQL Injection</td>
+                        <td>2022-12-15</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.76</td>
+                        <td>Resolved</td>
+                        <td>34</td>
+                    </tr>
+                    <tr>
+                        <td>79</td>
+                        <td>Phishing</td>
+                        <td>2022-12-18</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.77</td>
+                        <td>Resolved</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td>Malware</td>
+                        <td>2022-12-22</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.116</td>
+                        <td>10.0.0.78</td>
+                        <td>Open</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>81</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-12-25</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.79</td>
+                        <td>Resolved</td>
+                        <td>84</td>
+                    </tr>
+                    <tr>
+                        <td>82</td>
+                        <td>Ransomware</td>
+                        <td>2022-12-28</td>
+                        <td>DatabaseServer</td>
+                        <td></td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.80</td>
+                        <td>Open</td>
+                        <td>54</td>
+                    </tr>
+                    <tr>
+                        <td>83</td>
+                        <td>SQL Injection</td>
+                        <td>2023-01-02</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td></td>
+                        <td>10.0.0.81</td>
+                        <td>Resolved</td>
+                        <td>93</td>
+                    </tr>
+                    <tr>
+                        <td>84</td>
+                        <td>Phishing</td>
+                        <td>2023-01-05</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td></td>
+                        <td>Resolved</td>
+                        <td>39</td>
+                    </tr>
+                    <tr>
+                        <td>85</td>
+                        <td>Malware</td>
+                        <td>2023-01-10</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.117</td>
+                        <td>10.0.0.83</td>
+                        <td>Open</td>
+                        <td>456</td>
+                    </tr>
+                    <tr>
+                        <td>86</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2023-01-15</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.84</td>
+                        <td>In Progress</td>
+                        <td>532</td>
+                    </tr>
+                    <tr>
+                        <td>87</td>
+                        <td></td>
+                        <td>2023-01-18</td>
+                        <td></td>
+                        <td>Malicious Link</td>
+                        <td></td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.85</td>
+                        <td>Resolved</td>
+                        <td>62</td>
+                    </tr>
+                    <tr>
+                        <td>88</td>
+                        <td>SQL Injection</td>
+                        <td>2023-01-22</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td></td>
+                        <td>Open</td>
+                        <td>47</td>
+                    </tr>
+                    <tr>
+                        <td>89</td>
+                        <td>Phishing</td>
+                        <td>2023-01-25</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.87</td>
+                        <td>Resolved</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>90</td>
+                        <td>Malware</td>
+                        <td>2023-01-28</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.118</td>
+                        <td>10.0.0.88</td>
+                        <td>Resolved</td>
+                        <td>54</td>
+                    </tr>
+                    <tr>
+                        <td>91</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2023-02-02</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.89</td>
+                        <td>Open</td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td>92</td>
+                        <td>Ransomware</td>
+                        <td></td>
+                        <td></td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.90</td>
+                        <td>Resolved</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>93</td>
+                        <td>SQL Injection</td>
+                        <td>2023-02-10</td>
+                        <td>WebApplication</td>
+                        <td></td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.91</td>
+                        <td>Resolved</td>
+                        <td>244</td>
+                    </tr>
+                    <tr>
+                        <td>94</td>
+                        <td>Phishing</td>
+                        <td>2023-02-15</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.92</td>
+                        <td>Open</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>95</td>
+                        <td>Malware</td>
+                        <td>2023-02-18</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.119</td>
+                        <td>10.0.0.93</td>
+                        <td>Resolved</td>
+                        <td>44</td>
+                    </tr>
+                    <tr>
+                        <td>96</td>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2023-02-22</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.94</td>
+                        <td>Resolved</td>
+                        <td>723</td>
+                    </tr>
+                    <tr>
+                        <td>97</td>
+                        <td>Ransomware</td>
+                        <td>2023-02-25</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td></td>
+                        <td></td>
+                        <td>10.0.0.95</td>
+                        <td>Open</td>
+                        <td>94</td>
+                    </tr>
+                    <tr>
+                        <td>98</td>
+                        <td>SQL Injection</td>
+                        <td>2023-02-28</td>
+                        <td></td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.96</td>
+                        <td>Resolved</td>
+                        <td>44</td>
+                    </tr>
+                    <tr>
+                        <td>99</td>
+                        <td></td>
+                        <td>2023-03-02</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.97</td>
+                        <td>Resolved</td>
+                        <td>323</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>Vortex Malware</td>
+                        <td>2023-03-05</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td></td>
+                        <td>192.168.1.120</td>
+                        <td>10.0.0.98</td>
+                        <td>Open</td>
+                        <td>22</td>
+                    </tr>
+                </table>
+
+            </section>
+            <h2 class="t2">Cyberattaques en 2024 - Table 2</h2>
+            <p>La seconde table represente les attaques sans la colonne des durées des attaques "AttackDuration" </p>
+            <section>
+                <table class="table2">
+                    <tr>
+                        <th>AttackID</th>
+                        <td>AttackType</td>
+                        <td>AttackDate</td>
+                        <td>TargetSystem</td>
+                        <td>AttackVector</td>
+                        <td>Severity</td>
+                        <td>AttackerIP</td>
+                        <td>VictimIP</td>
+                        <td>Status</td>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <td>Malware</td>
+                        <td>2022-02-15</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.100</td>
+                        <td>10.0.0.1</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>Phishing</td>
+                        <td>2022-02-20</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.2</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.3</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <td>Ransomware</td>
+                        <td>2022-03-05</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.4</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>5</th>
+                        <td></td>
+                        <td>2022-03-10</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.5</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>6</th>
+                        <td>Phishing</td>
+                        <td>2022-03-12</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.6</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>7</th>
+                        <td>Malware</td>
+                        <td>2022-03-15</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.101</td>
+                        <td>10.0.0.7</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>8</th>
+                        <td></td>
+                        <td>2022-03-20</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.8</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>9</th>
+                        <td>Ransomware</td>
+                        <td>2022-03-25</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.9</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>10</th>
+                        <td>SQL Injection</td>
+                        <td>2022-03-28</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.10</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>11</th>
+                        <td>Malware</td>
+                        <td>2022-04-02</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.102</td>
+                        <td>10.0.0.11</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>12</th>
+                        <td>Phishing</td>
+                        <td>2022-04-05</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td></td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>13</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-04-10</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td></td>
+                        <td></td>
+                        <td>10.0.0.13</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>14</th>
+                        <td></td>
+                        <td>2022-04-15</td>
+                        <td>DatabaseServer</td>
+                        <td></td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.14</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>15</th>
+                        <td>SQL Injection</td>
+                        <td></td>
+                        <td></td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.15</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>16</th>
+                        <td>Phishing</td>
+                        <td>2022-04-20</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.16</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>17</th>
+                        <td>Malware</td>
+                        <td>2022-04-25</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.103</td>
+                        <td>10.0.0.17</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>18</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-04-28</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.18</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>19</th>
+                        <td>Ransomware</td>
+                        <td>2022-05-02</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td></td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>20</th>
+                        <td>SQL Injection</td>
+                        <td>2022-05-05</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.20</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>21</th>
+                        <td>Malware</td>
+                        <td>2022-05-10</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.104</td>
+                        <td>10.0.0.21</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>22</th>
+                        <td>Phishing</td>
+                        <td>2022-05-15</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.22</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>23</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-05-18</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.23</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>24</th>
+                        <td>Ransomware</td>
+                        <td>2022-05-22</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.24</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>25</th>
+                        <td>SQL Injection</td>
+                        <td>2022-05-25</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.25</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>26</th>
+                        <td>Phishing</td>
+                        <td>2022-05-28</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.26</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>27</th>
+                        <td>Malware</td>
+                        <td>2022-06-02</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.105</td>
+                        <td>10.0.0.27</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>28</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-06-05</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.28</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>29</th>
+                        <td>Ransomware</td>
+                        <td>2022-06-10</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td></td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>30</th>
+                        <td>SQL Injection</td>
+                        <td>2022-06-15</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.30</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>31</th>
+                        <td>Malware</td>
+                        <td></td>
+                        <td></td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.106</td>
+                        <td>10.0.0.31</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>32</th>
+                        <td></td>
+                        <td>2022-06-22</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td></td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.32</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>33</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-06-25</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.33</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>34</th>
+                        <td>Ransomware</td>
+                        <td>2022-06-28</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td></td>
+                        <td>10.0.0.34</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>35</th>
+                        <td>SQL Injection</td>
+                        <td>2022-07-02</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>36</th>
+                        <td>Malware</td>
+                        <td></td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.107</td>
+                        <td>10.0.0.35</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>37</th>
+                        <td>Phishing</td>
+                        <td>2022-07-10</td>
+                        <td>EmployeeWorkstation</td>
+                        <td></td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td></td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>38</th>
+                        <td></td>
+                        <td>2022-07-15</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.37</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>39</th>
+                        <td>Ransomware</td>
+                        <td>2022-07-18</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.38</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>40</th>
+                        <td>SQL Injection</td>
+                        <td>2022-07-22</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.39</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>41</th>
+                        <td>Phishing</td>
+                        <td>2022-07-25</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.40</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>42</th>
+                        <td>Malware</td>
+                        <td>2022-07-28</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.108</td>
+                        <td>10.0.0.41</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>43</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-08-02</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.42</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>44</th>
+                        <td>Ransomware</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>45</th>
+                        <td>SQL Injection</td>
+                        <td>2022-08-10</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.44</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>46</th>
+                        <td>Malware</td>
+                        <td>2022-08-15</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.109</td>
+                        <td>10.0.0.45</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>47</th>
+                        <td>Phishing</td>
+                        <td>2022-08-18</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.46</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>48</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-08-22</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.47</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>49</th>
+                        <td>Ransomware</td>
+                        <td>2022-08-25</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.48</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>50</th>
+                        <td>SQL Injection</td>
+                        <td>2022-08-28</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.49</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>51</th>
+                        <td>Phishing</td>
+                        <td>2022-09-02</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.50</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>52</th>
+                        <td>Malware</td>
+                        <td>2022-09-05</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.110</td>
+                        <td></td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>53</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-09-10</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.52</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>54</th>
+                        <td>Ransomware</td>
+                        <td>2022-09-15</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.53</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>55</th>
+                        <td>SQL Injection</td>
+                        <td>2022-09-18</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.54</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>56</th>
+                        <td>Phishing</td>
+                        <td></td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.55</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>57</th>
+                        <td>Malware</td>
+                        <td>2022-09-25</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.111</td>
+                        <td>10.0.0.56</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>58</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-09-28</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.57</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>59</th>
+                        <td>Ransomware</td>
+                        <td>2022-10-02</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.58</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>60</th>
+                        <td>SQL Injection</td>
+                        <td>2022-10-05</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.59</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>61</th>
+                        <td></td>
+                        <td></td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.60</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>62</th>
+                        <td>Malware</td>
+                        <td>2022-10-15</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td></td>
+                        <td>10.0.0.61</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>63</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-10-18</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.62</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>64</th>
+                        <td>Ransomware</td>
+                        <td>2022-10-22</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.63</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>65</th>
+                        <td>SQL Injection</td>
+                        <td>2022-10-25</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.64</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>66</th>
+                        <td>Phishing</td>
+                        <td>2022-10-28</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.65</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>67</th>
+                        <td>Malware</td>
+                        <td>2022-11-02</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.113</td>
+                        <td>10.0.0.66</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>68</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-11-05</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.67</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>69</th>
+                        <td>Ransomware</td>
+                        <td>2022-11-10</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.68</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>70</th>
+                        <td>SQL Injection</td>
+                        <td>2022-11-15</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.69</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>71</th>
+                        <td>Phishing</td>
+                        <td>2022-11-18</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.70</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>72</th>
+                        <td>Malware</td>
+                        <td>2022-11-22</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.114</td>
+                        <td>10.0.0.71</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>73</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-11-25</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>74</th>
+                        <td>Phishing</td>
+                        <td></td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.72</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>75</th>
+                        <td>Malware</td>
+                        <td>2022-12-02</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.115</td>
+                        <td>10.0.0.73</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>76</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-12-05</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.74</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>77</th>
+                        <td>Ransomware</td>
+                        <td>2022-12-10</td>
+                        <td></td>
+                        <td></td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.75</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>78</th>
+                        <td>SQL Injection</td>
+                        <td>2022-12-15</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.76</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>79</th>
+                        <td>Phishing</td>
+                        <td>2022-12-18</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.77</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>80</th>
+                        <td>Malware</td>
+                        <td>2022-12-22</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.116</td>
+                        <td>10.0.0.78</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>81</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2022-12-25</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.79</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>82</th>
+                        <td>Ransomware</td>
+                        <td>2022-12-28</td>
+                        <td>DatabaseServer</td>
+                        <td></td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.80</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>83</th>
+                        <td>SQL Injection</td>
+                        <td>2023-01-02</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td></td>
+                        <td>10.0.0.81</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>84</th>
+                        <td>Phishing</td>
+                        <td>2023-01-05</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td></td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>85</th>
+                        <td>Malware</td>
+                        <td>2023-01-10</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.117</td>
+                        <td>10.0.0.83</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>86</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2023-01-15</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.84</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <th>87</th>
+                        <td></td>
+                        <td>2023-01-18</td>
+                        <td></td>
+                        <td>Malicious Link</td>
+                        <td></td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.85</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>88</th>
+                        <td>SQL Injection</td>
+                        <td>2023-01-22</td>
+                        <td>WebApplication</td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td></td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>89</th>
+                        <td>Phishing</td>
+                        <td>2023-01-25</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.87</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>90</th>
+                        <td>Malware</td>
+                        <td>2023-01-28</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.118</td>
+                        <td>10.0.0.88</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>91</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2023-02-02</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.89</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>92</th>
+                        <td>Ransomware</td>
+                        <td></td>
+                        <td></td>
+                        <td>Malicious Link</td>
+                        <td>High</td>
+                        <td>185.174.171.4</td>
+                        <td>10.0.0.90</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>93</th>
+                        <td>SQL Injection</td>
+                        <td>2023-02-10</td>
+                        <td>WebApplication</td>
+                        <td></td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.91</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>94</th>
+                        <td>Phishing</td>
+                        <td>2023-02-15</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.92</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>95</th>
+                        <td>Malware</td>
+                        <td>2023-02-18</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td>High</td>
+                        <td>192.168.1.119</td>
+                        <td>10.0.0.93</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>96</th>
+                        <td>Distributed Denial of Service (DDoS)</td>
+                        <td>2023-02-22</td>
+                        <td>WebServer</td>
+                        <td>Network</td>
+                        <td>Critical</td>
+                        <td>104.27.138.153</td>
+                        <td>10.0.0.94</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>97</th>
+                        <td>Ransomware</td>
+                        <td>2023-02-25</td>
+                        <td>DatabaseServer</td>
+                        <td>Malicious Link</td>
+                        <td></td>
+                        <td></td>
+                        <td>10.0.0.95</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>98</th>
+                        <td>SQL Injection</td>
+                        <td>2023-02-28</td>
+                        <td></td>
+                        <td>Code Injection</td>
+                        <td>Critical</td>
+                        <td>192.0.2.55</td>
+                        <td>10.0.0.96</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>99</th>
+                        <td></td>
+                        <td>2023-03-02</td>
+                        <td>EmployeeWorkstation</td>
+                        <td>Social Engineering</td>
+                        <td>Medium</td>
+                        <td>203.0.113.42</td>
+                        <td>10.0.0.97</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <th>100</th>
+                        <td>Malware</td>
+                        <td>2023-03-05</td>
+                        <td>CorporateServer</td>
+                        <td>Email</td>
+                        <td></td>
+                        <td>192.168.1.120</td>
+                        <td>10.0.0.98</td>
+                        <td>Open</td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Hiver2024 - CCNB Dieppe - Christian KALLA - christian.kalla@ccnb.ca</p>
+    </footer>
+</body>
+
+</html>
